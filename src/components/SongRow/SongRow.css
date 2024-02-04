@@ -1,0 +1,94 @@
+.songRow {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 0.5fr;
+  padding: 5px;
+  align-items: center;
+  color: white;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.songRow:hover {
+  background-color: rgb(53 50 66);
+  opacity: 0.8;
+}
+
+@media (max-width: 650px) {
+  .songDetails {
+    width: 100px;
+  }
+}
+
+.songDetails {
+  max-width: 300px;
+}
+
+.song>span:hover,
+.song>span:focus, .artist>span>a:hover,
+.artist>span>a:focus {
+  display: inline-block;
+  animation: scroll-text 15s infinite linear;
+  cursor: pointer;
+}
+
+.songRow:hover>.playlist-button {
+  opacity: 1;
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+}
+
+.songRow:hover>.songImg {
+  opacity: 0.5;
+}
+
+.songRow:focus {
+  cursor: pointer;
+  background-color: rgb(131, 127, 152);
+  opacity: 0.8;
+}
+
+.playlist-button {
+  display: none
+}
+
+ .song, .artist {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+}
+
+.date>span:not(:hover), .song>span:not(:hover) {
+  text-overflow: ellipsis;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0%);
+  }
+
+  90% {
+    transform: translateX(-100%);
+  }
+
+  95% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.artist>span>a {
+  color: white;
+}
+
+.songImg {
+  width: 50px;
+  height: 50px;
+}

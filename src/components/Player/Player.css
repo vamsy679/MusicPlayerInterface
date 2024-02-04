@@ -1,0 +1,118 @@
+.player {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  flex: 0.3;
+  margin-top: 10px;
+}
+
+.music_player {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0 40px 100px rebeccapurple;
+  overflow: hidden;
+  color: black;
+}
+
+.music_player>img {
+  width: 150px;
+  height: 150px;
+}
+
+.current-song>h3 {
+  margin: 10px 0;
+}
+
+.card {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 0;
+  opacity: 0;
+
+  transition: 500ms;
+}
+
+.card--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 500px) {
+  .card--left, .card--right {
+    display: none;
+  }
+}
+
+.card--left {
+  transform: translateX(-125%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
+}
+
+.card--right {
+  transform: translateX(125%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
+}
+
+.slide {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.player-buttons {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.song_name, .artist_name {
+  text-transform: capitalize;
+
+}
+
+.artist_name {
+  all: unset;
+}
+
+.current-song {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prevbutton, .playbutton, .nextbutton, .playbutton-active {
+  all: unset;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+}
+
+.playbutton:hover, .prevbutton:hover, .nextbutton:hover, .playbutton-active:hover {
+  background-color: rgb(158, 120, 196)
+}
+
+.prevbutton[disabled], .nextbutton[disabled] {
+  cursor: not-allowed;
+  border: 0;
+  opacity: 0.3
+}
+
+.playbutton-active {
+  background-color: #8f23fa;
+}
